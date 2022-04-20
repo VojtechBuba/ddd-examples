@@ -1,0 +1,23 @@
+{
+  "name": "vojtech-buba/ddd-examples",
+  "description": "Examples of code modeled by DDD concepts",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "vojtechbuba",
+      "email": "email@vbuba.cz"
+    }
+  ],
+  "require": {
+    "php": ">=7.4",
+    "brick/math": "^0.9.3",
+    "doctrine/collections": "^1.6",
+    "ramsey/uuid": "^4.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Vb\\": "src"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+/.*
+!/.db
+!/.gitignore
+!/.gitmodules
+!/.npmrc
+!/.github
+/app/environment.php
+/log
+/temp
+/vendor
+/node_modules
+/composer.phar
+/package-lock.json
+/www/js/.cache
+/www/js/dist
+/www/dist
+/www/data
+/.idea
+*.local.neon
+/data
+/supervisor.conf
+# macOS
+.DS_Store
