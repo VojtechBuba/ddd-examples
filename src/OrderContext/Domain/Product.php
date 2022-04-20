@@ -17,12 +17,15 @@ class Product
 
 	private Price $totalPrice;
 
+	private EAN $ean;
+
 
 	public function __construct(
 		ProductId $productId,
 		string $name,
 		Quantity $quantity,
-		Price $unitPrice
+		Price $unitPrice,
+		EAN $ean
 	)
 	{
 		$this->productId = $productId;
@@ -30,6 +33,7 @@ class Product
 		$this->quantity = $quantity;
 		$this->unitPrice = $unitPrice;
 		$this->totalPrice = $this->unitPrice->multiply($quantity);
+		$this->ean = $ean;
 	}
 
 
@@ -72,6 +76,12 @@ class Product
 	}
 
 
+	public function getEan(): EAN
+	{
+		return $this->ean;
+	}
+
+
 	public function getDetail(): ProductDetail
 	{
 		return new ProductDetail(
@@ -79,7 +89,8 @@ class Product
 			$this->getName(),
 			$this->getUnitPrice(),
 			$this->getTotalPrice(),
-			$this->getQuantity()
+			$this->getQuantity(),
+			$this->getEan()
 		);
 	}
 

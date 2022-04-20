@@ -41,7 +41,7 @@ class Basket
 	}
 
 
-	public function addProduct(Quantity $quantity, Price $unitPrice, string $name): ProductDetail
+	public function addProduct(Quantity $quantity, Price $unitPrice, string $name, EAN $ean): ProductDetail
 	{
 		if ( ! $unitPrice->getCurrency()->equals($this->currency)) {
 			throw new CurrencyMismatchException($this->currency);
@@ -51,7 +51,8 @@ class Basket
 			ProductId::create(),
 			$name,
 			$quantity,
-			$unitPrice
+			$unitPrice,
+			$ean
 		);
 
 		$this->products->set($product->getProductId()->getValue(), $product);
